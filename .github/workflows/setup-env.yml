@@ -1,7 +1,7 @@
 name: Generate .env file
 
 on:
-  workflow_dispatch:  # Permite ejecutar manualmente el workflow
+  workflow_dispatch:
 
 jobs:
   create-env:
@@ -17,7 +17,9 @@ jobs:
           echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
 
       - name: Verify .env file
-        run: cat .env  # 🔍 Imprime el contenido del archivo para verificarlo
+        run: |
+          ls -la   # 📌 Verifica si el archivo realmente existe
+          cat .env # 🔍 Muestra el contenido del archivo
 
       - name: Upload .env as artifact
         uses: actions/upload-artifact@v3
