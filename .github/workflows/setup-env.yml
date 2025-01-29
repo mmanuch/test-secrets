@@ -22,7 +22,7 @@ jobs:
           cat .env # 🔍 Muestra el contenido del archivo
 
       - name: Upload .env as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: env-file
           path: .env
