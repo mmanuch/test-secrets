@@ -26,3 +26,5 @@ jobs:
         with:
           name: env-file
           path: .env
+          if-no-files-found: error
+          include-hidden-files: true  # ✅ Incluir archivos ocultos
